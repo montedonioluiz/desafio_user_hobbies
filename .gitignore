@@ -1,0 +1,9 @@
+# Development generations
+node_modules
+package-lock.json
+
+# Environment variables
+.env
+
+# Build dir
+dist
