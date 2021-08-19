@@ -7,6 +7,13 @@ export default {
     const schema = yup.object().shape({
       name: yup.string()
         .required("Mandatory field: name"),
+      experienceLevel: yup.string()
+        .required("Mandatory field: experienceLevel")
+        .oneOf(["Low", "Medium", "High", "Very High"], ({ values }) => `ExperienceLevel must be one of the following values: ${values}`),
+      year: yup.number()
+        .required("Mandatory field: year")
+        .typeError("Year must be a valid number")
+        .integer("Year must be a valid integer")
     });
 
     return schema.validate(req.body, { abortEarly: false })
