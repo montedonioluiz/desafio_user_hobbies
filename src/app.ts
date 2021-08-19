@@ -1,5 +1,3 @@
-require('dotenv').config();
-
 // Dependencies
 import cors from 'cors';
 import express from 'express';
@@ -29,13 +27,15 @@ class App {
       useNewUrlParser: true,
       useUnifiedTopology: true
     })
+      .then(_ => console.log("Mongodb connection setup successfully"))
+      .catch(err => console.log('Error while connecting to Mongodb: ', err))
   }
 
   private routes(): void {
     this.express.get('/', (req, res) => {
       return res.send('Hello, World!')
     })
-    
+
     this.express.use('/user', userRoutes);
   }
 }
