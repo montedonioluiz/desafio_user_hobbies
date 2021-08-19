@@ -16,23 +16,13 @@ class UserController {
   }
 
   public async read(req: Request, res: Response): Promise<Response> {
-    const users = await User.find()
+    const users = await User.find().populate('hobbies')
       .catch(err => {
         console.log("Getall user error: ", err)
         return res.status(500).json({ message: "Error while fetching users" })
       });
 
     return res.json(users);
-  }
-
-  public async update(req: Request, res: Response): Promise<Response> {
-    const user = await User.findByIdAndUpdate(req.params.userId, req.body, { new: true })
-      .catch(err => {
-        console.log("Update user error: ", err)
-        return res.status(500).json({ message: "Error while updating the user" })
-      });
-
-    return res.json(user);
   }
 
   public async delete(req: Request, res: Response): Promise<Response> {

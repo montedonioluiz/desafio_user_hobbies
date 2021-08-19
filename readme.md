@@ -1,0 +1,2 @@
+- no edit included because no func in front mockup
+- two possibilities of retrieving user hobbies: on get users OR separate get hobbies on FE click user; depends on the quantity of users expected
