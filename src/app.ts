@@ -15,9 +15,11 @@ class App {
     this.express = express()
 
     this.middlewares()
-    this.database()
     this.swagger()
     this.routes()
+
+    if (process.env.NODE_ENV !== 'test')
+      this.database()
   }
 
   private middlewares(): void {

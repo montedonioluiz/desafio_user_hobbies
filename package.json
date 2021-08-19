@@ -7,7 +7,7 @@
     "start": "node dist/server.js",
     "dev": "ts-node-dev -r tsconfig-paths/register --respawn --transpile-only --ignore-watch node_modules --no-notify src/server.ts",
     "build": "babel src --extensions \".js,.ts\" --out-dir dist --copy-files --no-copy-ignored",
-    "test": "jest"
+    "test": "NODE_ENV=test jest --runInBand ./tests"
   },
   "author": "",
   "license": "ISC",
@@ -32,13 +32,15 @@
     "eslint-plugin-node": "^11.1.0",
     "eslint-plugin-promise": "^5.1.0",
     "jest": "^27.0.6",
+    "mongodb-memory-server": "^7.3.6",
+    "supertest": "^6.1.6",
     "ts-jest": "^27.0.5",
     "ts-node-dev": "^1.1.8",
     "typescript": "^4.3.5"
   },
   "dependencies": {
     "cors": "^2.8.5",
-    "dotenv": "^10.0.0",
+    "dotenv-flow": "^3.2.0",
     "express": "^4.17.1",
     "mongoose": "^5.13.7",
     "swagger-jsdoc": "^6.1.0",
