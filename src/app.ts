@@ -1,3 +1,5 @@
+require('dotenv').config();
+
 // Dependencies
 import cors from 'cors';
 import express from 'express';
@@ -13,7 +15,7 @@ class App {
     this.express = express()
 
     this.middlewares()
-    // this.database()
+    this.database()
     this.routes()
   }
 
@@ -23,8 +25,9 @@ class App {
   }
 
   private database(): void {
-    mongoose.connect(`mongodb://${process.env.MONGO_URL}`, {
-      useNewUrlParser: true
+    mongoose.connect(process.env.MONGO_URL, {
+      useNewUrlParser: true,
+      useUnifiedTopology: true
     })
   }
 
