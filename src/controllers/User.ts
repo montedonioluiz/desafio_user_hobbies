@@ -80,8 +80,7 @@ class UserController {
    *       in: "path"
    *       description: "ID of user to delete"
    *       required: true
-   *       type: "integer"
-   *       format: "int64"
+   *       type: "string"
    *     responses:
    *       '200':
    *         description: Success
