@@ -23,6 +23,7 @@
 - The project was containerized using `Docker`.
 - The project has CI-CD implemented. All pushes to `Github` are automatically reflected on `Heroku` via the `Github Actions` implemented workflow.
 - The MongoDB instance is running online in an `MongoDB Atlas Cloud` instance.
+- An `Insomnia` json file was included in the `assets` folder, to test the endpoints locally.
 
 ### Note
 - There were two possibilities of retrieving the user's hobbies: retrieve them along with each user on the `GET /user` endpoint, or create a separate `GET /user/{userId}/hobby` to be called every time a user is clicked on the screen. If a lot of users were to be loaded in the database, the first choice wouldn't be so practible because the user might have to wait a longer time for the table to load its components. However, the second choice also isn't the best-case scenario because you would make one extra request to the server on every new click on a user in the table.
